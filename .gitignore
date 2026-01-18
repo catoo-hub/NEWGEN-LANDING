@@ -4,7 +4,7 @@ dist/
 .astro/
 
 # Gemini
-.gemini-clipboard
+.gemini-clipboard/
 GEMINI.md
 
 # dependencies
