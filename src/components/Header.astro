@@ -8,10 +8,13 @@ const lang = (urlLang in ui) ? urlLang as keyof typeof ui : defaultLang;
 const t = ui[lang];
 
 // Helper for localized paths
-const getPath = (path: string) => `/${lang}${path}`;
+const getPath = (path: string) => {
+  const url = `/${lang}${path}`;
+  return url.endsWith('/') ? url : `${url}/`;
+};
 ---
 <header class="absolute top-0 left-0 w-full p-4 md:p-8 flex justify-between items-start text-[10px] md:text-xs font-mono uppercase tracking-widest z-50 pointer-events-none mix-blend-darken">
-  <a href={getPath('/')} class="flex items-center gap-2 pointer-events-auto hover:opacity-70 transition-opacity">
+  <a href={getPath('')} class="flex items-center gap-2 pointer-events-auto hover:opacity-70 transition-opacity">
     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
     <span id="clock">REC 00:00:00</span>
   </a>
@@ -25,11 +28,14 @@ const getPath = (path: string) => `/${lang}${path}`;
       <span class="py-2">{t['nav.lang']}</span>
       <div class="absolute right-0 -top-4 pt-10 hidden group-hover:block min-w-[120px]">
         <div class="bg-white/80 backdrop-blur-md p-2 rounded shadow-lg">
-          {Object.entries(languages).map(([key, label]) => (
-            <a href={`/${key}${Astro.url.pathname.replace(/^\/[a-z]{2}/, '')}`} class="block py-1 px-2 hover:bg-black/5 whitespace-nowrap">
-              {label}
-            </a>
-          ))}
+          {Object.entries(languages).map(([key, label]) => {
+            const cleanPath = Astro.url.pathname.replace(/^\/[a-z]{2}/, '').replace(/\/$/, '');
+            return (
+              <a href={`/${key}${cleanPath}/`} class="block py-1 px-2 hover:bg-black/5 whitespace-nowrap">
+                {label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
