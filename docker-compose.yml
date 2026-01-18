@@ -6,7 +6,7 @@ services:
     networks:
       - shared_web
     ports:
-      - "3001:80"
+      - "4321:3001"
 
 networks:
   shared_web:
