@@ -1,0 +1,95 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import { ui, defaultLang } from '@/i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'ja' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const projects = [
+  { id: '01', title: 'Neon Dreams', category: 'AMV', year: '2025' },
+  { id: '02', title: 'Cyber Pulse', category: 'Clip', year: '2025' },
+  { id: '03', title: 'Void Echo', category: 'GFX', year: '2024' },
+  { id: '04', title: 'Kinetic Flow', category: 'GMV', year: '2024' },
+  { id: '05', title: 'Static Noise', category: 'Visuals', year: '2024' },
+  { id: '06', title: 'Glass Horizon', category: 'Art Direction', year: '2023' },
+];
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{t['works.title']} | NEWGEN</title>
+	</head>
+	<body class="bg-[#F8F8F8] selection:bg-black selection:text-white">
+    <section class="relative w-full min-h-screen overflow-x-hidden">
+      
+      <Header />
+
+      {/* --- Background Blobs (Reused) --- */}
+      <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <div class="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-neutral-300 rounded-full blur-[100px] animate-blob mix-blend-multiply"></div>
+          <div class="absolute bottom-[10%] left-[-10%] w-[35vw] h-[35vw] bg-slate-300 rounded-[40%] blur-[80px] animate-blob animation-delay-2000 mix-blend-multiply"></div>
+      </div>
+
+      <main class="relative z-10 pt-32 px-4 md:px-12 pb-20">
+        <div class="mb-20">
+          <h1 class="text-[12vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-[#1a1a1a] mix-blend-darken" set:html={t['works.title'].replace('\n', '<br/>')}>
+          </h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-24 w-full max-w-[1920px] mx-auto">
+          {projects.map((project, index) => (
+            <div class="group relative flex flex-col gap-4 cursor-pointer">
+              {/* Glass Card / Placeholder Image */}
+              <div class="relative aspect-video w-full overflow-hidden rounded-2xl bg-white/40 border border-white/60 shadow-sm backdrop-blur-sm transition-all duration-500 group-hover:bg-white/60 group-hover:shadow-xl group-hover:scale-[1.02]">
+                <div class="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
+                  <span class="text-6xl font-black text-black/10">{project.id}</span>
+                </div>
+                {/* Glitch Overlay Effect on Hover */}
+                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
+
+              {/* Project Info */}
+              <div class="flex justify-between items-baseline border-b border-black/10 pb-2 transition-colors group-hover:border-black/30">
+                <div class="flex flex-col">
+                  <span class="text-xs font-mono text-gray-500 mb-1">({project.category})</span>
+                  <h3 class="text-xl md:text-2xl font-bold uppercase tracking-tight">{project.title}</h3>
+                </div>
+                <span class="text-xs font-mono">{project.year}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
+
+    </section>
+
+    <style>
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 15s infinite cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+    </style>
+	</body>
+</html>

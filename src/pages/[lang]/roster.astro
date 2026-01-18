@@ -1,0 +1,110 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import { ui, defaultLang } from '@/i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'ja' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const members = [
+  { name: 'maxoon', role: 'Founder', id: '01', avatar: '/avatars/fliz.aep.jpg', link: 'https://instagram.com/fliz.aep' },
+  { name: 'so wild', role: 'Creative Director', id: '02', avatar: '/avatars/so.w1ld.jpg', link: 'https://instagram.com/so.w1ld' },
+  { name: 'saradov', role: 'VFX Artist & 3D', id: '03', avatar: '/avatars/saradov.hj.jpg', link: 'https://instagram.com/saradov.hj' },
+  { name: 'hexterna', role: 'Motion Designer', id: '04', avatar: '/avatars/hexterna.ng.jpg', link: 'https://instagram.com/hexterna.ng' },
+  { name: 'zelylolz', role: 'Sound Design', id: '05', avatar: '/avatars/zelyobtw.jpg', link: 'https://instagram.com/zelyobtw' },
+  { name: 'n1krus', role: 'Visuals & GFX', id: '06', avatar: '/avatars/n1krus_aep.jpg', link: 'https://instagram.com/n1krus_aep' },
+];
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{t['roster.title']} | NEWGEN</title>
+	</head>
+	<body class="bg-[#F8F8F8] selection:bg-black selection:text-white">
+    <section class="relative w-full min-h-screen overflow-x-hidden">
+      
+      <Header />
+
+      {/* --- Background Blobs --- */}
+      <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <div class="absolute top-[10%] left-[20%] w-[45vw] h-[45vw] bg-neutral-300 rounded-full blur-[90px] animate-blob mix-blend-multiply"></div>
+          <div class="absolute bottom-[20%] right-[10%] w-[40vw] h-[40vw] bg-slate-300 rounded-full blur-[100px] animate-blob animation-delay-4000 mix-blend-multiply"></div>
+      </div>
+
+      <main class="relative z-10 pt-32 px-4 md:px-12 pb-20">
+        
+        {/* Title */}
+        <div class="mb-20">
+          <h1 class="text-[12vw] md:text-[10vw] leading-[0.85] font-black tracking-tighter text-[#1a1a1a] mix-blend-darken uppercase" set:html={t['roster.title'].replace('\n', '<br/>')}>
+          </h1>
+        </div>
+
+        {/* Members Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[1920px] mx-auto">
+          {members.map((member) => (
+            <div class="group relative flex flex-col justify-between p-6 h-[400px] overflow-hidden transition-all duration-500 hover:-translate-y-2">
+              
+              {/* Card Header */}
+              <div class="flex justify-between items-start z-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-gray-500">[{member.id}]</span>
+                <div class="w-2 h-2 rounded-full bg-black/10 group-hover:bg-green-500 transition-colors duration-300"></div>
+              </div>
+
+              {/* Avatar Background */}
+              <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                <img 
+                  src={member.avatar} 
+                  alt={member.name} 
+                  class="w-full h-full object-cover opacity-10 grayscale group-hover:opacity-30 group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100"
+                />
+              </div>
+              
+               {/* Glitch/Hover Gradient */}
+               <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              {/* Card Footer / Info */}
+              <div class="relative z-10 mt-auto">
+                <a href={member.link} class="block group/link">
+                  <h3 class="text-3xl font-bold leading-none mb-2 group-hover:tracking-wide transition-all duration-300 group-hover/link:underline decoration-2 underline-offset-4">{member.name}</h3>
+                </a>
+                <div class="w-full h-px bg-black/10 my-3 group-hover:bg-black/30 transition-colors"></div>
+                <p class="text-sm font-mono uppercase tracking-wider text-gray-600">{member.role}</p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </main>
+
+    </section>
+
+    <style>
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 15s infinite cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+    </style>
+	</body>
+</html>

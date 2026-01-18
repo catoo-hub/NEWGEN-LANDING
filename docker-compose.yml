@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build: .
+    container_name: newgen-frontend
+    restart: always
+    networks:
+      - shared_web
+    ports:
+      - "3001:80"
+
+networks:
+  shared_web:
+    external: true

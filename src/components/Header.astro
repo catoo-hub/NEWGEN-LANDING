@@ -1,0 +1,51 @@
+---
+import { ui, languages, defaultLang } from '@/i18n/ui';
+
+// Get current language from URL
+const urlLang = Astro.url.pathname.split('/')[1];
+const lang = (urlLang in ui) ? urlLang as keyof typeof ui : defaultLang;
+
+const t = ui[lang];
+
+// Helper for localized paths
+const getPath = (path: string) => `/${lang}${path}`;
+---
+<header class="absolute top-0 left-0 w-full p-4 md:p-8 flex justify-between items-start text-[10px] md:text-xs font-mono uppercase tracking-widest z-50 pointer-events-none mix-blend-darken">
+  <a href={getPath('/')} class="flex items-center gap-2 pointer-events-auto hover:opacity-70 transition-opacity">
+    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+    <span id="clock">REC 00:00:00</span>
+  </a>
+  
+  <div class="hidden md:block absolute left-1/2 -translate-x-1/2 text-center opacity-80">
+    &copy; NEWGEN Studio
+  </div>
+
+  <nav class="flex gap-6 pointer-events-auto text-right">
+    <div class="group cursor-pointer relative">
+      <span class="py-2">{t['nav.lang']}</span>
+      <div class="absolute right-0 -top-4 pt-10 hidden group-hover:block min-w-[120px]">
+        <div class="bg-white/80 backdrop-blur-md p-2 rounded shadow-lg">
+          {Object.entries(languages).map(([key, label]) => (
+            <a href={`/${key}${Astro.url.pathname.replace(/^\/[a-z]{2}/, '')}`} class="block py-1 px-2 hover:bg-black/5 whitespace-nowrap">
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <a href={getPath('/works')} class="hover:line-through decoration-1">{t['nav.work']}</a>
+    <a href={getPath('/roster')} class="hover:line-through decoration-1">{t['nav.roster']}</a>
+    <a href={getPath('/contact')} class="hover:line-through decoration-1">{t['nav.contact']}</a>
+  </nav>
+</header>
+
+<script>
+  const updateClock = () => {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+    const clockEl = document.getElementById('clock');
+    if (clockEl) clockEl.innerText = `REC ${timeString}`;
+  };
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>

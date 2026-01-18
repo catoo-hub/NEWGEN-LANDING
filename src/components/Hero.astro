@@ -1,0 +1,96 @@
+---
+import Header from '@/components/Header.astro';
+import { ui, defaultLang } from '@/i18n/ui';
+
+// Get current language from URL
+const urlLang = Astro.url.pathname.split('/')[1];
+const lang = (urlLang in ui) ? urlLang as keyof typeof ui : defaultLang;
+
+const t = ui[lang];
+---
+
+<section class="relative w-full h-screen overflow-hidden bg-[#F8F8F8] text-black font-sans selection:bg-black selection:text-white">
+  
+  <Header />
+
+  {/* --- Main Visual Stack --- */}
+  <div class="relative w-full h-full flex flex-col items-center justify-center">
+
+    {/* Layer 1: Background Blobs (Behind Text) */}
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="absolute top-[10%] left-[10%] w-[30vw] h-[30vw] bg-white rounded-[40%] blur-[80px] opacity-80 animate-blob"></div>
+        <div class="absolute bottom-[20%] right-[20%] w-[40vw] h-[40vw] bg-gray-200 rounded-full blur-[100px] opacity-60 animate-blob animation-delay-4000"></div>
+    </div>
+
+    {/* Layer 2: Main Typography */}
+    <div class="relative z-10 w-full px-4 mix-blend-multiply">
+      <h1 class="text-[18vw] md:text-[22vw] leading-[0.8] font-black tracking-tighter text-center text-[#1a1a1a] transform scale-y-110 select-none">
+        NEWGEN
+      </h1>
+    </div>
+
+    {/* Layer 4: Info Strip / Marquee */}
+    <div class="absolute top-[60%] md:top-[65%] w-full z-30 bg-white/30 backdrop-blur-md">
+        <div class="w-full h-px bg-black/5 mb-2"></div>
+        <div class="flex justify-between items-center px-4 md:px-12 text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-800 w-full max-w-[1920px] mx-auto">
+            <span class="hidden md:inline">{t['hero.tag.experience']}</span>
+            <span>Clips</span>
+            <span>AMV / GMV</span>
+            <span>GFX</span>
+            <span>{t['hero.tag.visuals']}</span>
+            <span class="hidden md:inline">{t['hero.tag.creative']}</span>
+            <span class="hidden md:inline">(01)</span>
+        </div>
+        <div class="w-full h-px bg-black/5 mt-2"></div>
+    </div>
+
+    {/* Layer 5: Mission Statement */}
+    <div class="absolute bottom-[10%] md:bottom-[15%] w-full px-6 z-40">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-xs md:text-sm font-mono uppercase leading-relaxed tracking-wider text-gray-700">
+                {t['hero.subtitle']} <br class="hidden md:block" />
+                {t['hero.mission']} <br class="hidden md:block" />
+                {t['hero.footer']}
+            </p>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  
+  @keyframes float-slow {
+    0% { transform: translate(0, -50%) rotate(0deg); }
+    50% { transform: translate(10px, -55%) rotate(2deg); }
+    100% { transform: translate(0, -50%) rotate(0deg); }
+  }
+
+  @keyframes float-delayed {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-10px, 10px) rotate(-2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+  .animate-blob {
+    animation: blob 10s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s infinite ease-in-out;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 15s infinite ease-in-out reverse;
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import '@/styles/global.css';
+import Hero from '@/components/Hero.astro';
+import { ui, defaultLang } from '@/i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'ko' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'ja' } },
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>NEWGEN | Creative Studio</title>
+	</head>
+	<body class="bg-[#F8F8F8]">
+		<Hero />
+	</body>
+</html>
