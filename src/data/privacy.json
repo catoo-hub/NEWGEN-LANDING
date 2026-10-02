@@ -1,0 +1,136 @@
+{
+  "ru": {
+    "title": "Политика обработки персональных данных",
+    "intro": "Сайт команды RE:STATIC и обращения по творческим заказам",
+    "sections": [
+      {
+        "title": "1. Оператор и контакты",
+        "paragraphs": [
+          "Оператор персональных данных — индивидуальный предприниматель Вахрушев Никита Андреевич, ИНН 183314051365, ОГРНИП 326180000093242, действующий под названием команды RE:STATIC. Сайт: https://restatic.team. По вопросам обработки данных и реализации своих прав пишите на hikeru1@icloud.com. Телефон: +7 967 443-77-67.",
+          "Политика касается посетителей сайта, лиц, обращающихся к команде, заказчиков и их представителей, а также лиц, сведения о которых содержатся в переданных для работы материалах."
+        ]
+      },
+      {
+        "title": "2. Какие данные обрабатываются",
+        "paragraphs": [
+          "При открытии сайта серверу передаются IP-адрес, дата и время запроса, адрес страницы или файла, сведения о браузере, ответе сервера и, если передаётся браузером, странице перехода. Эти сведения могут попадать в технические журналы для работы и защиты сайта.",
+          "Если вы обращаетесь по email или согласованному каналу связи, обрабатываются имя или псевдоним, контактные данные, содержание переписки, бриф, ссылки и предоставленные файлы. При заключении заказа также обрабатываются необходимые сведения о сторонах, условиях заказа, оплате и чеке. Не присылайте пароли, полные данные банковских карт и не относящиеся к заказу документы.",
+          "На текущей версии сайта нет регистрации, личного кабинета, формы загрузки файлов и встроенной оплаты. Переписка и согласование заказа происходят отдельно. Перед запуском новых функций политика будет дополнена с учётом их фактической работы."
+        ]
+      },
+      {
+        "title": "3. Цели и основания обработки",
+        "paragraphs": [
+          "Контактные данные, переписка и материалы используются для ответа на запрос, подготовки предложения и исполнения согласованного заказа. Основанием служат действия по запросу лица до заключения договора, исполнение договора или иное применимое законное основание.",
+          "Сведения о расчётах и чеках обрабатываются для исполнения обязанностей по закону. Необходимые сведения о споре могут сохраняться для предъявления и защиты правовых требований. Технические сведения используются для доставки страниц, выявления ошибок и обеспечения безопасности в пределах применимых законных оснований.",
+          "Когда обработка требует согласия, оно запрашивается отдельно для конкретной цели. Посещение сайта или принятие оферты само по себе не является согласием на рекламные рассылки или публикацию ваших персональных данных. При применимости GDPR используются соответствующие основания статьи 6: договор и преддоговорные действия, правовая обязанность, согласие либо законный интерес в безопасности сайта и защите требований при соблюдении баланса прав."
+        ]
+      },
+      {
+        "title": "4. Cookies и внешние ссылки",
+        "paragraphs": [
+          "В коде текущего сайта не используются рекламные трекеры, сторонняя аналитика, cookies для отслеживания и сохранение профиля посетителя в localStorage. Видео и изображения размещены как файлы сайта; встроенных плееров YouTube или Instagram нет.",
+          "Ссылки на YouTube, Instagram, Behance и другие внешние ресурсы открывают сторонние сайты с собственными правилами обработки данных. Отправка email происходит через выбранный вами почтовый сервис. Если позднее подключатся аналитика, внешние виджеты или необязательные cookies, сведения о них и необходимые настройки согласия будут предоставлены до их использования."
+        ]
+      },
+      {
+        "title": "5. Доступ к данным и передача",
+        "paragraphs": [
+          "Доступ получают оператор и участники команды или независимые подрядчики, которым сведения необходимы для конкретного заказа, с обязанностью соблюдать конфиденциальность и применимые требования к обработке. Технические поставщики хостинга и связи получают сведения, необходимые для своих функций. Контактный ящик hikeru1@icloud.com обслуживается сервисом Apple iCloud Mail.",
+          "Данные могут предоставляться платёжным организациям и государственным органам в объёме, необходимом для законных расчётов и исполнения обязательных требований. Персональные данные не продаются. Публикация имени клиента и сведений о заказе в портфолио требует отдельного разрешения и, когда требуется, отдельного согласия на распространение данных.",
+          "Оператор находится в Российской Федерации. Использование международных сервисов может затрагивать обработку данных за её пределами. Трансграничная передача допускается только при выполнении применимых требований, включая необходимые уведомления, основания и гарантии. Информацию о получателях, странах обработки и применимых гарантиях можно запросить по email; согласие на такую передачу не предполагается автоматически из факта посещения сайта."
+        ]
+      },
+      {
+        "title": "6. Хранение и удаление",
+        "paragraphs": [
+          "Переписка по запросу без заказа хранится до завершения его рассмотрения и прекращения обоснованной необходимости в дальнейшей переписке. Данные действующего заказа хранятся на период исполнения обязательств; документы о расчётах и сведения, необходимые для правовых требований, — в течение применимых обязательных сроков хранения и сроков защиты требований.",
+          "Срок хранения рабочих материалов и доступности готовых файлов согласуется в заказе. Технические журналы сохраняются только на срок, необходимый для диагностики и безопасности, с учётом настроек используемой инфраструктуры. По достижении цели или утрате законного основания данные удаляются либо обезличиваются в установленный законом срок, если другое основание не требует их сохранения.",
+          "При запросе на удаление оператор сообщает, какие сведения могут быть удалены и какие должны быть сохранены по закону. Удаление выполняется из рабочих хранилищ; остаточные резервные копии удаляются в рамках их цикла хранения с ограничением дальнейшего использования данных."
+        ]
+      },
+      {
+        "title": "7. Ваши права",
+        "paragraphs": [
+          "Вы можете запросить сведения об обработке и доступ к своим данным, исправление неточностей, прекращение незаконной обработки и удаление данных при наличии оснований. Согласие можно отозвать по email; это не отменяет законность предшествующей обработки и не прекращает обработку на другом законном основании.",
+          "Если применимое право предусматривает ограничение обработки, возражение или переносимость данных, вы вправе воспользоваться этими правами. Можно обратиться в Роскомнадзор, компетентный надзорный орган страны проживания или суд. Запросы рассматриваются в сроки применимого закона; для защиты данных оператор может запросить соразмерное подтверждение личности.",
+          "Предоставление контактных данных и материалов добровольно, но без необходимых сведений невозможно ответить на запрос или исполнить заказ. Решения с юридическими или сопоставимыми последствиями исключительно на основе автоматической обработки на текущем сайте не принимаются."
+        ]
+      },
+      {
+        "title": "8. Защита данных и изменения политики",
+        "paragraphs": [
+          "Оператор ограничивает доступ к данным по необходимости, защищает учётные данные и принимает организационные и технические меры, соответствующие характеру обработки. Не передавайте в брифе избыточные сведения о третьих лицах; для материалов с персональными данными других людей необходимо законное основание.",
+          "Актуальная редакция размещается на этой странице. Изменения целей обработки или состава функций доводятся до сведения пользователей до начала соответствующей обработки; новые согласия запрашиваются, если это требуется. Дата редакции — 2 октября 2026 года."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Privacy notice",
+    "intro": "The RE:STATIC team website and creative project enquiries",
+    "sections": [
+      {
+        "title": "1. Controller and contact",
+        "paragraphs": [
+          "The controller is Nikita Andreevich Vakhrushev (Вахрушев Никита Андреевич), an individual entrepreneur (sole proprietor) registered in Russia, taxpayer identification number 183314051365, state registration number (OGRNIP) 326180000093242, operating under the RE:STATIC team name. Website: https://restatic.team. For privacy questions and rights requests, contact hikeru1@icloud.com or +7 967 443-77-67.",
+          "This notice covers website visitors, people contacting the team, clients and their representatives, and people whose information appears in materials supplied for a project."
+        ]
+      },
+      {
+        "title": "2. Information processed",
+        "paragraphs": [
+          "Opening the website sends the server your IP address, request date and time, requested page or file, browser and response information and, if supplied by your browser, the referring page. These details may appear in technical logs used to operate and protect the website.",
+          "If you contact us by email or an agreed communication channel, we process your name or alias, contact details, messages, brief, links and supplied files. When an order is agreed, we also process the necessary party, order, payment and receipt information. Do not send passwords, full payment-card details or documents unrelated to your project.",
+          "The current website has no registration, client account, file-upload form or integrated payment checkout. Communication and order confirmation take place separately. This notice will be updated to reflect the actual operation of new features before they launch."
+        ]
+      },
+      {
+        "title": "3. Purposes and legal grounds",
+        "paragraphs": [
+          "Contact information, messages and project materials are used to answer enquiries, prepare quotes and perform agreed orders. The legal basis is taking steps at the individual’s request before a contract, performing a contract, or another applicable lawful basis.",
+          "Payment and receipt information is processed to meet legal duties. Information necessary for a dispute may be retained to establish, exercise or defend legal claims. Technical information is used to deliver pages, diagnose errors and maintain security within the applicable legal grounds.",
+          "Where consent is required, it is requested separately for a specific purpose. Visiting the website or accepting the offer is not consent to marketing or public disclosure of personal information. Where GDPR applies, the relevant Article 6 grounds are contract and pre-contractual steps, legal obligation, consent, or legitimate interests in website security and legal claims subject to balancing individual rights."
+        ]
+      },
+      {
+        "title": "4. Cookies and external links",
+        "paragraphs": [
+          "The current website code contains no advertising trackers, third-party analytics, tracking cookies or visitor-profile storage in localStorage. Videos and images are served as website files; there are no embedded YouTube or Instagram players.",
+          "Links to YouTube, Instagram, Behance and other external services lead to sites with their own privacy practices. Email is sent through the mail service you choose. If analytics, external widgets or optional cookies are introduced, information and any required consent controls will be provided before they are used."
+        ]
+      },
+      {
+        "title": "5. Access and disclosure",
+        "paragraphs": [
+          "Access is limited to the controller and team members or independent contractors who need information for a specific order and are bound by confidentiality and applicable processing requirements. Hosting and communication providers receive the data needed for their functions. The contact mailbox hikeru1@icloud.com uses Apple iCloud Mail.",
+          "Information may be supplied to payment providers and public authorities to the extent needed for lawful payments and mandatory obligations. Personal information is not sold. Publishing a client’s name or order details in a portfolio requires separate permission and, where required, separate consent to public disclosure.",
+          "The controller is based in the Russian Federation. International services may involve processing outside Russia. Cross-border transfers are permitted only when applicable requirements are met, including required notices, legal grounds and safeguards. You may request information about recipients, processing countries and applicable safeguards by email; visiting the website does not automatically give consent to such transfers."
+        ]
+      },
+      {
+        "title": "6. Retention and deletion",
+        "paragraphs": [
+          "Enquiry correspondence without an order is retained until the enquiry is resolved and there is no justified need for follow-up. Active order information is retained to perform obligations; payment records and information needed for legal claims are retained for applicable mandatory retention and claim periods.",
+          "Project-material retention and final-file availability are agreed in the order. Technical logs are kept only as needed for diagnostics and security, taking the infrastructure settings into account. Once the purpose or lawful basis ends, information is deleted or anonymised within the applicable legal time limit unless another basis requires retention.",
+          "On a deletion request, the controller explains what can be erased and what must be retained by law. Information is removed from active stores; residual backups expire under their retention cycle with further use of the information restricted."
+        ]
+      },
+      {
+        "title": "7. Your rights",
+        "paragraphs": [
+          "You may request information about processing and access to your data, correction of inaccuracies, an end to unlawful processing and erasure where grounds apply. You may withdraw consent by email; withdrawal does not affect earlier lawful processing or processing supported by another legal basis.",
+          "Where applicable law provides restriction, objection or data-portability rights, you may exercise them. You may complain to Roskomnadzor, the competent supervisory authority in your country of residence, or a court. Requests are handled within applicable legal time limits; proportionate identity verification may be requested to protect your information.",
+          "Providing contact details and project materials is voluntary, but necessary information is required to answer an enquiry or perform an order. The current website does not make solely automated decisions that produce legal or similarly significant effects."
+        ]
+      },
+      {
+        "title": "8. Security and notice updates",
+        "paragraphs": [
+          "The controller limits access to those who need it, protects account credentials and applies organisational and technical measures appropriate to the processing. Do not include unnecessary third-party personal information in a brief; materials containing other people’s personal information require a lawful basis.",
+          "The current version is published on this page. Changes to processing purposes or features are explained before the relevant processing starts; fresh consent is requested where required. Version date: 2 October 2026."
+        ]
+      }
+    ]
+  }
+}

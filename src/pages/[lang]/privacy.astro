@@ -1,0 +1,7 @@
+---
+import LegalPage from '@/layouts/LegalPage.astro';
+import privacy from '@/data/privacy.json';
+export function getStaticPaths() { return ['ru', 'en', 'ko', 'ja'].map(lang => ({ params: { lang } })); }
+const locale = Astro.params.lang === 'ru' ? 'ru' : 'en';
+---
+<LegalPage content={privacy[locale]} kind="privacy" />

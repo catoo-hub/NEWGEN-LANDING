@@ -22,15 +22,23 @@ const t = ui[lang];
         <div class="absolute bottom-[20%] right-[20%] w-[40vw] h-[40vw] bg-gray-200 rounded-full blur-[100px] opacity-60 animate-blob animation-delay-4000"></div>
     </div>
 
-    {/* Layer 2: Main Typography */}
+    {/* Layer 2: Main Logo */}
     <div class="relative z-10 w-full px-4 mix-blend-multiply">
-      <h1 class="text-[18vw] md:text-[22vw] leading-[0.8] font-black tracking-tighter text-center text-[#1a1a1a] transform scale-y-110 select-none">
-        NEWGEN
+      <h1 class="flex justify-center select-none">
+        <img
+          src="/static_dirty.png"
+          alt="RE:STATIC"
+          width="1080"
+          height="1080"
+          fetchpriority="high"
+          draggable="false"
+          class="w-full max-w-[90vh] h-auto relative"
+        />
       </h1>
     </div>
 
     {/* Layer 4: Info Strip / Marquee */}
-    <div class="absolute top-[60%] md:top-[65%] w-full z-30 bg-white/30 backdrop-blur-md">
+    <div class="absolute top-[20%] md:top-[61%] w-full z-30 bg-white/30 backdrop-blur-md">
         <div class="w-full h-px bg-black/5 mb-2"></div>
         <div class="flex justify-between items-center px-4 md:px-12 text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-800 w-full max-w-[1920px] mx-auto">
             <span class="hidden md:inline">{t['hero.tag.experience']}</span>

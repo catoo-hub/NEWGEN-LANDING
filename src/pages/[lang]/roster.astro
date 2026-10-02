@@ -1,6 +1,8 @@
 ---
 import '@/styles/global.css';
+import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
+import { members } from '@/data/members';
 import { ui, defaultLang } from '@/i18n/ui';
 
 export function getStaticPaths() {
@@ -15,14 +17,7 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const t = ui[lang as keyof typeof ui] || ui[defaultLang];
 
-const members = [
-  { name: 'maxoon', role: 'Founder', id: '01', avatar: '/avatars/fliz.aep.jpg', link: 'https://instagram.com/fliz.aep' },
-  { name: 'so wild', role: 'Creative Director', id: '02', avatar: '/avatars/so.w1ld.jpg', link: 'https://instagram.com/so.w1ld' },
-  { name: 'saradov', role: 'VFX Artist & 3D', id: '03', avatar: '/avatars/saradov.hj.jpg', link: 'https://instagram.com/saradov.hj' },
-  { name: 'hexterna', role: 'Motion Designer', id: '04', avatar: '/avatars/hexterna.ng.jpg', link: 'https://instagram.com/hexterna.ng' },
-  { name: 'zelylolz', role: 'Sound Design', id: '05', avatar: '/avatars/zelyobtw.jpg', link: 'https://instagram.com/zelyobtw' },
-  { name: 'n1krus', role: 'Visuals & GFX', id: '06', avatar: '/avatars/n1krus_aep.jpg', link: 'https://instagram.com/n1krus_aep' },
-];
+
 ---
 
 <html lang={lang}>
@@ -31,7 +26,7 @@ const members = [
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{t['roster.title']} | NEWGEN</title>
+		<title>{t['roster.title']} | RE:STATIC</title>
 	</head>
 	<body class="bg-[#F8F8F8] selection:bg-black selection:text-white">
     <section class="relative w-full min-h-screen overflow-x-hidden">
@@ -63,13 +58,9 @@ const members = [
                 <div class="w-2 h-2 rounded-full bg-black/10 group-hover:bg-green-500 transition-colors duration-300"></div>
               </div>
 
-              {/* Avatar Background */}
-              <div class="absolute inset-0 pointer-events-none overflow-hidden">
-                <img 
-                  src={member.avatar} 
-                  alt={member.name} 
-                  class="w-full h-full object-cover opacity-10 grayscale group-hover:opacity-30 group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100"
-                />
+              {/* Typographic avatar until member portraits are provided. */}
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden" aria-hidden="true">
+                <span class="text-[8rem] font-black tracking-tighter text-black/5 group-hover:text-black/10 transition-colors duration-700">{member.name.slice(0, 2).toUpperCase()}</span>
               </div>
               
                {/* Glitch/Hover Gradient */}
@@ -77,7 +68,7 @@ const members = [
 
               {/* Card Footer / Info */}
               <div class="relative z-10 mt-auto">
-                <a href={member.link} class="block group/link">
+                <a href={member.link} target="_blank" rel="noopener noreferrer" class="block group/link focus-visible:outline-2 focus-visible:outline-offset-4">
                   <h3 class="text-3xl font-bold leading-none mb-2 group-hover:tracking-wide transition-all duration-300 group-hover/link:underline decoration-2 underline-offset-4">{member.name}</h3>
                 </a>
                 <div class="w-full h-px bg-black/10 my-3 group-hover:bg-black/30 transition-colors"></div>
@@ -106,5 +97,6 @@ const members = [
         animation-delay: 4s;
       }
     </style>
+	  <Footer />
 	</body>
 </html>

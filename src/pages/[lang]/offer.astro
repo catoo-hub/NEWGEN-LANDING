@@ -1,0 +1,7 @@
+---
+import LegalPage from '@/layouts/LegalPage.astro';
+import offers from '@/data/offers.json';
+export function getStaticPaths() { return ['ru', 'en', 'ko', 'ja'].map(lang => ({ params: { lang } })); }
+const locale = Astro.params.lang === 'ru' ? 'ru' : 'en';
+---
+<LegalPage content={offers[locale]} kind="offer" />

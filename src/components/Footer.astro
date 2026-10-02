@@ -1,0 +1,27 @@
+---
+const lang = Astro.url.pathname.split('/')[1] || 'en';
+const labels = {
+  ru: ['Политика персональных данных', 'Публичная оферта', 'Оферта DOCX — RU', 'Оферта DOCX — EN'],
+  en: ['Privacy notice', 'Public offer', 'Offer DOCX — RU', 'Offer DOCX — EN'],
+  ko: ['개인정보 처리방침 (EN)', '이용 계약 (EN)', '계약 DOCX — RU', '계약 DOCX — EN'],
+  ja: ['プライバシーポリシー (EN)', '契約条件 (EN)', '契約 DOCX — RU', '契約 DOCX — EN'],
+};
+const locale = lang in labels ? lang as keyof typeof labels : 'en';
+const t = labels[locale];
+---
+<footer class="relative z-10 border-t border-black/10 bg-[#F8F8F8] px-4 py-8 md:px-12">
+  <div class="mx-auto flex max-w-[1920px] flex-col gap-5 text-xs text-neutral-600 md:flex-row md:items-start md:justify-between">
+    <p class="font-mono">© 2026 RE:STATIC Team</p>
+    <nav aria-label={locale === 'ru' ? 'Правовая информация' : 'Legal information'} class="flex flex-wrap gap-x-6 gap-y-3 md:max-w-3xl md:justify-end">
+      <a href={`/${locale}/privacy/`}>{t[0]}</a>
+      <a href={`/${locale}/offer/`}>{t[1]}</a>
+      <a href="/documents/RESTATIC_Offer_RU.docx" download>{t[2]}</a>
+      <a href="/documents/RESTATIC_Offer_EN.docx" download>{t[3]}</a>
+    </nav>
+  </div>
+</footer>
+<style>
+  a { text-underline-offset: 4px; }
+  a:hover { color: black; text-decoration: underline; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+</style>

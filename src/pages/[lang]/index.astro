@@ -1,5 +1,6 @@
 ---
 import '@/styles/global.css';
+import Footer from '@/components/Footer.astro';
 import Hero from '@/components/Hero.astro';
 import { ui, defaultLang } from '@/i18n/ui';
 
@@ -21,9 +22,10 @@ const { lang } = Astro.params;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>NEWGEN | Creative Studio</title>
+		<title>RE:STATIC | Creative Team</title>
 	</head>
 	<body class="bg-[#F8F8F8]">
 		<Hero />
+	  <Footer />
 	</body>
 </html>

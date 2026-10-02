@@ -1,0 +1,44 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+interface Props { content: { title: string; intro: string; sections: {title: string; paragraphs: string[]}[] }; kind: 'offer' | 'privacy' }
+const { content, kind } = Astro.props;
+const lang = Astro.params.lang || 'en';
+const textLang = lang === 'ru' ? 'ru' : 'en';
+---
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={`https://restatic.team/${textLang}/${kind}/`} />
+    <title>{content.title} | RE:STATIC</title>
+  </head>
+  <body class="bg-[#F8F8F8] text-neutral-900">
+    <Header />
+    <main lang={textLang} class="mx-auto max-w-4xl px-5 pb-20 pt-32 md:px-10 md:pt-40">
+      <p class="mb-5 font-mono text-xs uppercase tracking-widest text-neutral-500">RE:STATIC / {textLang === 'ru' ? 'Правовая информация' : 'Legal information'}</p>
+      <h1 class="text-3xl font-bold leading-tight tracking-tight md:text-5xl">{content.title}</h1>
+      <p class="mt-5 text-lg text-neutral-600">{content.intro}</p>
+      <p class="mt-3 text-sm text-neutral-500">{textLang === 'ru' ? 'Редакция от 2 октября 2026 года' : 'Version dated 2 October 2026'}</p>
+      <div class="my-8 flex flex-wrap gap-5 text-sm underline underline-offset-4">
+        <a href={`/ru/${kind}/`} lang="ru">Русский</a>
+        <a href={`/en/${kind}/`} lang="en">English</a>
+        {kind === 'offer' && <a href={`/documents/RESTATIC_Offer_${textLang.toUpperCase()}.docx`} download>{textLang === 'ru' ? 'Скачать DOCX' : 'Download DOCX'}</a>}
+      </div>
+      <article class="space-y-9">
+        {content.sections.map(section => (
+          <section>
+            <h2 class="mb-4 text-xl font-semibold leading-snug">{section.title}</h2>
+            <div class="space-y-3 text-base leading-relaxed text-neutral-700">
+              {section.paragraphs.map(paragraph => <p class="break-words">{paragraph}</p>)}
+            </div>
+          </section>
+        ))}
+      </article>
+      <p class="mt-10 text-sm"><a class="underline underline-offset-4" href="mailto:hikeru1@icloud.com">hikeru1@icloud.com</a></p>
+    </main>
+    <Footer />
+  </body>
+</html>
