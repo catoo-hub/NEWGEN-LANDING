@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+dist
+.astro
+.env
+.env.*
+*.log
+.DS_Store
+.idea
+.vscode
+.gemini-clipboard
+README.md
+yarn.lock

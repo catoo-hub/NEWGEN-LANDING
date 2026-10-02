@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# RE:STATIC
+
+Сайт команды на Astro: портфолио с локальными видео, состав команды, оферта и политика персональных данных. Языки интерфейса: RU, EN, KO, JA; юридические тексты: RU и EN.
+
+## Разработка
+
+Используется Node.js 22 и npm с `package-lock.json`.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Сборка: `npm run build`. Результат создаётся в `dist/`.
 
-## 🚀 Project Structure
+## Деплой в Dokploy
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Создайте проект и сервис **Docker Compose** (не Docker Stack).
+2. Подключите репозиторий `catoo-hub/NEWGEN-LANDING`, ветку `main`.
+3. Укажите Compose Path: `./docker-compose.yml` и запустите Deploy.
+4. В разделе **Domains** добавьте `restatic.team`: Service Name — `frontend`, Container Port — `3001`, Path — `/`. Включите HTTPS с Let's Encrypt.
+5. В DNS домена создайте A-запись на IP сервера. AAAA добавляйте только при настроенном IPv6.
+6. После изменения домена выполните Redeploy. При необходимости включите Auto Deploy для обновлений из GitHub.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+Compose использует внешнюю сеть `dokploy-network`, создаваемую Dokploy. Доменные правила Traefik добавляются через интерфейс Dokploy. Порт на хост не публикуется. Переменные окружения и постоянные тома для текущего статического сайта не нужны.
+
+Docker собирает сайт через `npm ci` и раздаёт результат через Nginx на порту 3001. Видео, постеры и документы входят в образ. Nginx поддерживает Range-запросы для перемотки видео.
+
+Проверка конфигурации перед деплоем:
+
+```sh
+docker compose config --quiet
+docker compose build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+После публикации проверьте `/ru/works/`, `/ru/offer/`, `/ru/privacy/` и скачивание обоих DOCX из футера.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Правовые тексты находятся в `src/data/offers.json` и `src/data/privacy.json`, файлы оферт — в `public/documents/`. При изменении оферты нужно синхронно обновлять страницу и DOCX. Перед запуском заказов, оплаты и личного кабинета политика должна отражать фактическую обработку данных.
