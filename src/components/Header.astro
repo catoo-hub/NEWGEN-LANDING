@@ -23,7 +23,7 @@ const getPath = (path: string) => {
     &copy; RE:STATIC Team 2026. All rights reserved.
   </div>
 
-  <nav class="flex gap-6 pointer-events-auto text-right">
+  <nav class="flex flex-wrap justify-end gap-x-3 gap-y-2 md:gap-6 max-w-[70%] md:max-w-none pointer-events-auto text-right">
     <div class="group cursor-pointer relative">
       <span class="py-2">{t['nav.lang']}</span>
       <div class="absolute right-0 -top-4 pt-10 hidden group-hover:block min-w-[120px]">
@@ -41,6 +41,7 @@ const getPath = (path: string) => {
     </div>
     <a href={getPath('/works')} class="hover:line-through decoration-1">{t['nav.work']}</a>
     <a href={getPath('/roster')} class="hover:line-through decoration-1">{t['nav.roster']}</a>
+    <a href={`/${lang === "ru" ? "ru" : "en"}/account/`} class="hover:line-through decoration-1">{lang === "ru" ? "Кабинет" : "Account"}</a>
     <a href={getPath('/contact')} class="hover:line-through decoration-1">{t['nav.contact']}</a>
   </nav>
 </header>

@@ -15,7 +15,7 @@
         "paragraphs": [
           "При открытии сайта серверу передаются IP-адрес, дата и время запроса, адрес страницы или файла, сведения о браузере, ответе сервера и, если передаётся браузером, странице перехода. Эти сведения могут попадать в технические журналы для работы и защиты сайта.",
           "Если вы обращаетесь по email или согласованному каналу связи, обрабатываются имя или псевдоним, контактные данные, содержание переписки, бриф, ссылки и предоставленные файлы. При заключении заказа также обрабатываются необходимые сведения о сторонах, условиях заказа, оплате и чеке. Не присылайте пароли, полные данные банковских карт и не относящиеся к заказу документы.",
-          "На текущей версии сайта нет регистрации, личного кабинета, формы загрузки файлов и встроенной оплаты. Переписка и согласование заказа происходят отдельно. Перед запуском новых функций политика будет дополнена с учётом их фактической работы."
+          "В кабинете обрабатываются имя или псевдоним, подтверждённый email, защищённые данные авторизации и сессий, язык интерфейса, заявки, согласованные ТЗ и предложения, сообщения, материалы и версии работ. Для участников команды также обрабатываются специализация, доступность, назначения, начисления и заявки на вывод с необходимыми реквизитами. Полные реквизиты банковской карты сайт не запрашивает и не хранит."
         ]
       },
       {
@@ -29,8 +29,8 @@
       {
         "title": "4. Cookies и внешние ссылки",
         "paragraphs": [
-          "В коде текущего сайта не используются рекламные трекеры, сторонняя аналитика, cookies для отслеживания и сохранение профиля посетителя в localStorage. Видео и изображения размещены как файлы сайта; встроенных плееров YouTube или Instagram нет.",
-          "Ссылки на YouTube, Instagram, Behance и другие внешние ресурсы открывают сторонние сайты с собственными правилами обработки данных. Отправка email происходит через выбранный вами почтовый сервис. Если позднее подключатся аналитика, внешние виджеты или необязательные cookies, сведения о них и необходимые настройки согласия будут предоставлены до их использования."
+          "Кабинет использует необходимые cookies для авторизации и защиты сессии. Рекламные cookies, сторонняя аналитика и отслеживание посетителей не используются. Материалы заказов не находятся в публичной папке и выдаются после проверки доступа. Публичные работы доступны посетителям только после публикации администратором.",
+          "Ссылки на YouTube, Instagram, Behance и облачные хранилища ведут на сторонние сайты с собственными правилами обработки данных. Оплата открывается в интерфейсе Robokassa; ей передаются сумма, номер платежа, необходимые сведения об услуге и email для платёжных документов. Платёжные реквизиты карты вводятся у платёжного сервиса. Служебные письма отправляются через настроенного поставщика SMTP; технические поставщики и страны хранения определяются фактической конфигурацией размещения и сообщаются по запросу."
         ]
       },
       {
@@ -61,7 +61,15 @@
         "title": "8. Защита данных и изменения политики",
         "paragraphs": [
           "Оператор ограничивает доступ к данным по необходимости, защищает учётные данные и принимает организационные и технические меры, соответствующие характеру обработки. Не передавайте в брифе избыточные сведения о третьих лицах; для материалов с персональными данными других людей необходимо законное основание.",
-          "Актуальная редакция размещается на этой странице. Изменения целей обработки или состава функций доводятся до сведения пользователей до начала соответствующей обработки; новые согласия запрашиваются, если это требуется. Дата редакции — 2 октября 2026 года."
+          "Актуальная редакция размещается на этой странице. Изменения целей обработки или состава функций доводятся до сведения пользователей до начала соответствующей обработки; новые согласия запрашиваются, если это требуется. Дата редакции — 3 октября 2026 года."
+        ]
+      },
+      {
+        "title": "Работа кабинета и доступ к заказам",
+        "paragraphs": [
+          "До оплаты клиента сопровождают модераторы. Исполнителю доступно краткое ТЗ для принятия назначения; после оплаты он получает сведения и переписку своего заказа, необходимые для работы. Внутренние сообщения команды не видны клиенту. Администратор управляет доступом, ростером, портфолио и расчётами. Значимые действия фиксируются в журнале.",
+          "Регистрационные и восстановительные письма, уведомления о заказе и напоминания используются для работы сервиса. Сообщения о непрочитанной переписке могут объединяться. Они не являются рекламной рассылкой. Разрешение на публикацию результата в портфолио запрашивается отдельно и может быть отозвано в кабинете или по email.",
+          "Файлы до 1 ГБ загружаются в закрытое хранилище; для более крупных материалов можно предоставить ссылку. Доступность файлов и сроки их хранения определяются согласованным заказом. Данные договоров, платежей и расчётов сохраняются в пределах необходимых обязательных сроков; запросы о доступе, исправлении или удалении направляются на hikeru1@icloud.com."
         ]
       }
     ]
@@ -82,7 +90,7 @@
         "paragraphs": [
           "Opening the website sends the server your IP address, request date and time, requested page or file, browser and response information and, if supplied by your browser, the referring page. These details may appear in technical logs used to operate and protect the website.",
           "If you contact us by email or an agreed communication channel, we process your name or alias, contact details, messages, brief, links and supplied files. When an order is agreed, we also process the necessary party, order, payment and receipt information. Do not send passwords, full payment-card details or documents unrelated to your project.",
-          "The current website has no registration, client account, file-upload form or integrated payment checkout. Communication and order confirmation take place separately. This notice will be updated to reflect the actual operation of new features before they launch."
+          "The account processes your name or nickname, verified email, protected authentication and session data, interface language, applications, agreed briefs and quotes, messages, materials and work versions. Team members also have specialization, availability, assignments, earnings and withdrawal requests with necessary transfer details. The website does not request or store full bank-card credentials."
         ]
       },
       {
@@ -96,8 +104,8 @@
       {
         "title": "4. Cookies and external links",
         "paragraphs": [
-          "The current website code contains no advertising trackers, third-party analytics, tracking cookies or visitor-profile storage in localStorage. Videos and images are served as website files; there are no embedded YouTube or Instagram players.",
-          "Links to YouTube, Instagram, Behance and other external services lead to sites with their own privacy practices. Email is sent through the mail service you choose. If analytics, external widgets or optional cookies are introduced, information and any required consent controls will be provided before they are used."
+          "The account uses necessary cookies for authentication and session security. Advertising cookies, third-party analytics and visitor tracking are not used. Order materials are stored outside the public directory and served after access checks. Public works become available to visitors only after administrator publication.",
+          "Links to YouTube, Instagram, Behance and cloud storage open third-party websites with their own privacy rules. Payments open in Robokassa, which receives the amount, payment reference, necessary service details and email for payment documents. Card credentials are entered with the payment service. Service emails use the configured SMTP provider; actual hosting configuration determines technical providers and storage countries, which can be requested from the operator."
         ]
       },
       {
@@ -128,7 +136,15 @@
         "title": "8. Security and notice updates",
         "paragraphs": [
           "The controller limits access to those who need it, protects account credentials and applies organisational and technical measures appropriate to the processing. Do not include unnecessary third-party personal information in a brief; materials containing other people’s personal information require a lawful basis.",
-          "The current version is published on this page. Changes to processing purposes or features are explained before the relevant processing starts; fresh consent is requested where required. Version date: 2 October 2026."
+          "The current version is published on this page. Changes to processing purposes or features are explained before the relevant processing starts; fresh consent is requested where required. Version date: 3 October 2026."
+        ]
+      },
+      {
+        "title": "Accounts and order access",
+        "paragraphs": [
+          "Moderators assist the client before payment. A performer sees a brief summary to accept an assignment; after payment they receive the information and conversation needed for their assigned order. Internal team messages are hidden from the client. The administrator manages access, roster, portfolio and settlements. Significant actions are recorded in an audit log.",
+          "Verification and recovery emails, order updates and reminders support the service. Notifications of unread messages may be grouped. These are not marketing emails. Permission to publish a deliverable in the portfolio is requested separately and may be withdrawn in the account or by email.",
+          "Files up to 1 GB are uploaded to private storage; larger materials may be shared by link. The agreed order determines file availability and retention. Contract, payment and settlement records are retained for necessary mandatory periods; requests for access, correction or deletion should be sent to hikeru1@icloud.com."
         ]
       }
     ]

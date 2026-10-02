@@ -12,3 +12,10 @@ dist
 .gemini-clipboard
 README.md
 yarn.lock
+
+storage
+tests
+playwright-report
+test-results
+
+backups/

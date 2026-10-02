@@ -3,17 +3,11 @@ import '@/styles/global.css';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import VideoPlayer from '@/components/VideoPlayer.astro';
-import { projects } from '@/data/projects';
+import { catalog } from '@/server/services/catalog';
+const { projects } = await catalog();
 import { ui, defaultLang } from '@/i18n/ui';
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'ko' } },
-    { params: { lang: 'ru' } },
-    { params: { lang: 'ja' } },
-  ];
-}
+if (!['ru','en','ko','ja'].includes(Astro.params.lang || '')) return new Response('Not found', { status: 404 });
 
 const { lang } = Astro.params;
 const t = ui[lang as keyof typeof ui] || ui[defaultLang];
@@ -49,7 +43,7 @@ const t = ui[lang as keyof typeof ui] || ui[defaultLang];
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-24 w-full max-w-[1920px] mx-auto">
           {projects.map((project) => (
             <article class="group relative flex flex-col gap-4 min-w-0">
-              <VideoPlayer src={project.src} poster={project.poster} title={project.title} duration={project.duration} lang={lang} />
+              {["GFX", "LOGO"].includes(project.platform) ? <img src={project.src} alt={project.title} class="rounded-2xl w-full object-contain" loading="lazy" /> : <VideoPlayer src={project.src} poster={project.poster} title={project.title} duration={project.duration} lang={lang} />}
               <div class="flex justify-between items-baseline gap-4 border-b border-black/10 pb-3 transition-colors group-hover:border-black/30">
                 <div class="min-w-0">
                   <span class="block text-[10px] font-mono tracking-widest text-gray-500 mb-2 uppercase">{project.platform}</span>

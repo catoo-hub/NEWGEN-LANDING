@@ -2,17 +2,11 @@
 import '@/styles/global.css';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
-import { members } from '@/data/members';
+import { catalog } from '@/server/services/catalog';
+const { members } = await catalog();
 import { ui, defaultLang } from '@/i18n/ui';
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'ko' } },
-    { params: { lang: 'ru' } },
-    { params: { lang: 'ja' } },
-  ];
-}
+if (!['ru','en','ko','ja'].includes(Astro.params.lang || '')) return new Response('Not found', { status: 404 });
 
 const { lang } = Astro.params;
 const t = ui[lang as keyof typeof ui] || ui[defaultLang];
@@ -73,6 +67,7 @@ const t = ui[lang as keyof typeof ui] || ui[defaultLang];
                 </a>
                 <div class="w-full h-px bg-black/10 my-3 group-hover:bg-black/30 transition-colors"></div>
                 <p class="text-sm font-mono uppercase tracking-wider text-gray-600">{member.role}</p>
+                <p class="text-xs font-mono mt-3" style={member.available ? "color: #257444" : "color: #777"}>{member.available ? (lang === "ru" ? "Открыт к заказам" : "Available for orders") : (lang === "ru" ? "Недоступен к заказам" : "Unavailable for orders")}</p>
               </div>
 
             </div>

@@ -29,7 +29,7 @@
         "paragraphs": [
           "3.1. Исполнитель выполняет заказ лично и/или привлекает независимых участников команды и подрядчиков, отвечая за их работу перед Заказчиком. Исполнитель обеспечивает договорные основания для использования их результатов и последующей передачи согласованных прав Заказчику.",
           "3.2. Заказчик передаёт пригодные файлы, требования, тексты и референсы, подтверждает права на предоставленные материалы и своевременно даёт обратную связь. Исполнитель сообщает о выявленных недостатках материалов и согласует замену или изменение задания.",
-          "3.3. Количество концепций, включённых раундов правок и срок обратной связи указываются в заказе до акцепта. Раунд правок — один согласованный список замечаний к представленной версии. Замена концепции, музыки, материалов или объёма вне ТЗ согласуется отдельно с указанием цены и срока.",
+          "3.3. В цену заказа включены два раунда правок в рамках согласованного ТЗ. Один раунд — один собранный список замечаний к представленной версии. Изменение концепции, музыки, материалов или объёма за пределами ТЗ оформляется отдельной заявкой с согласованием цены и сроков.",
           "3.4. Исправление несоответствий согласованному ТЗ не оплачивается дополнительно и не расходует лимит творческих правок. Лимит правок не ограничивает установленные законом требования в связи с недостатками результата.",
           "3.5. Исполнитель передаёт превью для проверки, а финальные файлы — в составе, форматах и порядке оплаты, указанных в заказе. Превью может иметь водяной знак или ограниченное разрешение. После полной оплаты Заказчик получает согласованные финальные файлы без демонстрационных ограничений.",
           "3.6. Заказчик подтверждает приёмку в личном кабинете или переписке либо направляет конкретные замечания со ссылкой на ТЗ. Молчание само по себе не означает отказа от требований по качеству или автоматической приёмки. Срок доступности ссылок и хранения исходников согласуется в заказе; Заказчик сохраняет полученные файлы."
@@ -39,7 +39,7 @@
         "title": "4 Цена и порядок расчётов",
         "paragraphs": [
           "4.1. Цены по категориям AMV, GMV, GFX, LOGO и VIDEO CLIPS устанавливаются в опубликованных тарифах или индивидуальном расчёте. До публикации тарифов стоимость определяется по согласованному заказу. Отсутствующая цена не означает бесплатную услугу; оплата не запрашивается до согласования итоговой суммы.",
-          "4.2. В заказе до акцепта фиксируются итоговая сумма, валюта цены и платежа, размер предоплаты, этапы оплаты, применимые налоги и известные комиссии. При пересчёте валют указываются источник курса и дата его определения. Дополнительные работы и расходы допускаются только после отдельного согласования.",
+          "4.2. В кабинете применяется 100% предоплата в российских рублях после явного подтверждения Заказчиком сохранённого предложения с ТЗ, ценой, результатом, исполнителем и сроком. Оплата проводится через Robokassa. Возможные особенности доступного клиенту платёжного метода и конвертации отображаются платёжным сервисом до платежа. Цена принятого заказа без согласия Заказчика не меняется.",
           "4.3. Расчёты производятся безналично законным и доступным сторонам способом. Исполнитель выдаёт расчётные документы, включая кассовый чек, в случаях и сроки, предусмотренные законом. Применимые налоги, в том числе НДС при наличии обязанности его исчисления, учитываются в согласованной итоговой цене; сведения о НДС указываются в заказе и расчётных документах в соответствии с законом. Если платёж недоступен, стороны согласуют другой законный способ либо отмену заказа и расчёт по выполненному объёму с учётом обязательных прав Заказчика.",
           "4.4. Вознаграждение за передачу исключительных прав на оригинальные элементы включается в итоговую цену; его сумма или способ определения отдельно фиксируется в заказе до акцепта. Для уже принятого заказа цена не меняется без согласия Заказчика."
         ]
@@ -83,7 +83,7 @@
       {
         "title": "9 Срок действия и изменения",
         "paragraphs": [
-          "9.1. Редакция оферты от 2 октября 2026 года действует с момента публикации. Договор по отдельному заказу действует с акцепта до исполнения обязательств; условия о правах, конфиденциальности и ответственности сохраняются в применимой части после завершения.",
+          "9.1. Редакция оферты от 3 октября 2026 года действует с момента публикации. Договор по отдельному заказу действует с акцепта до исполнения обязательств; условия о правах, конфиденциальности и ответственности сохраняются в применимой части после завершения.",
           "9.2. Новая редакция применяется только к новым заказам. Изменение сайта, тарифа или оферты не изменяет ранее принятый заказ. Изменения действующего заказа требуют согласования сторон в сохраняемой электронной форме. Отзыв оферты не прекращает уже заключённые договоры."
         ]
       },
@@ -103,6 +103,15 @@
           "ИНН: 183314051365. ОГРНИП: 326180000093242.",
           "Телефон: +7 967 443-77-67. Email: hikeru1@icloud.com.",
           "Сайт: https://restatic.team. Платёжные реквизиты предоставляются в подтверждённом заказе или счёте."
+        ]
+      },
+      {
+        "title": "12 Работа через кабинет",
+        "paragraphs": [
+          "12.1. Заявка создаётся в кабинете с описанием, ТЗ, типом работы, музыкой при необходимости, материалами и необязательным предпочтением исполнителя. Модератор согласует условия. Без предпочтения система предлагает случайного доступного участника нужной специализации; категория OTHER распределяется модератором. Исполнитель подтверждает назначение до выставления оплаты. Замену предпочтительного исполнителя согласует Заказчик.",
+          "12.2. Приглашение исполнителю действует 24 часа, предложение клиенту — 7 дней. После истечения срока условия и доступность исполнителя подтверждаются повторно. До оплаты Заказчик общается с модераторами; после подтверждённой оплаты исполнитель подключается к общему чату. Превью, финалы, правки и изменения условий фиксируются в кабинете. Версия принятой оферты и условия предложения сохраняются для заказа.",
+          "12.3. Заказчик подтверждает приёмку финала в кабинете или направляет конкретные замечания. При отсутствии ответа отправляются напоминания, а администратор рассматривает ситуацию индивидуально и фиксирует основание своего решения по статусу заказа. Молчание не становится автоматической приёмкой и не лишает Заказчика предусмотренных законом требований. Завершение заказа не означает разрешение на публикацию работы.",
+          "12.4. Исполнитель получает доступ только к назначенным ему заказам. Изменения согласованного ТЗ или срока предлагает модератор, а подтверждает Заказчик. Запросы отмены и возврата рассматриваются индивидуально; запись возврата в кабинете отражает фактически проведённый возврат через платёжный сервис. Тестовый режим Robokassa предназначен для проверки работы системы и не подтверждает поступление реальных денег."
         ]
       }
     ]
@@ -137,7 +146,7 @@
         "paragraphs": [
           "3.1. The Provider may work personally and/or engage independent team members and contractors, remaining responsible for their performance to the Client. The Provider obtains the rights needed to use their contributions and transfer the agreed rights to the Client.",
           "3.2. The Client supplies usable files, requirements, text and references, confirms the necessary rights to client-supplied materials, and provides timely feedback. The Provider identifies known material issues and agrees replacements or scope changes.",
-          "3.3. The order states the number of concepts, included revision rounds and feedback period before acceptance. A revision round is one consolidated set of comments on a submitted version. Changes to concept, music, materials or scope outside the brief require separate agreement on price and timing.",
+          "3.3. The order price includes two revision rounds within the agreed brief. One round is one consolidated set of comments on a submitted version. Changes to concept, music, materials or scope outside the brief require a separate application with an agreed price and schedule.",
           "3.4. Corrections required to meet the agreed brief are included at no extra charge and do not use the creative revision allowance. Revision limits do not restrict statutory remedies for defects or non-conformity.",
           "3.5. The Provider supplies previews for review and final files in the formats, scope and payment sequence specified in the order. Previews may be watermarked or reduced in resolution. After full payment, the Client receives the agreed final files without preview restrictions.",
           "3.6. The Client confirms acceptance through the account or agreed messages, or identifies specific issues against the brief. Silence alone does not waive quality claims or constitute automatic acceptance. Download availability and project-file retention are agreed in the order; the Client should save delivered files."
@@ -147,7 +156,7 @@
         "title": "4 Price and payment",
         "paragraphs": [
           "4.1. Prices for AMV, GMV, GFX, LOGO and VIDEO CLIPS are set in published packages or an individual quote. Until packages are published, pricing is agreed per order. A missing price does not mean the work is free; payment is not requested until the total is agreed.",
-          "4.2. Before acceptance, the order states the total, quote and payment currencies, advance, payment milestones, applicable taxes and known fees. Any currency conversion must specify its rate source and fixing date. Additional work or expenses require separate approval.",
+          "4.2. The account uses 100% advance payment in Russian rubles after the Client expressly confirms the saved quote containing the brief, price, deliverables, performer and deadline. Payment is made through Robokassa. The payment service displays applicable payment-method and conversion information before payment. An accepted order price cannot change without the Client’s agreement.",
           "4.3. Payments are cashless through a lawful method available to both parties. The Provider issues payment documents, including a fiscal receipt, where and within the time limits required by law. Applicable taxes, including VAT where chargeable, are included in the agreed total price; VAT treatment is stated in the order and payment documents as required by law. If payment is unavailable, the parties agree another lawful method or cancellation and settlement, subject to the Client’s mandatory rights.",
           "4.4. The consideration for assigning exclusive rights in original elements is included in the total price. Its amount or calculation method must be separately identified in the order before acceptance. The price of an accepted order cannot change without the Client’s agreement."
         ]
@@ -191,7 +200,7 @@
       {
         "title": "9 Duration and changes",
         "paragraphs": [
-          "9.1. This version, dated 2 October 2026, takes effect on publication. Each order contract runs from acceptance until obligations are fulfilled; rights, confidentiality and liability provisions survive where relevant.",
+          "9.1. This version, dated 3 October 2026, takes effect on publication. Each order contract runs from acceptance until obligations are fulfilled; rights, confidentiality and liability provisions survive where relevant.",
           "9.2. A new version applies only to new orders. Website, price or terms updates do not alter an accepted order. Changes to an existing order require both parties’ agreement in a retainable electronic form. Withdrawal of these terms does not end existing contracts."
         ]
       },
@@ -211,6 +220,15 @@
           "Russian taxpayer identification number (INN): 183314051365. State registration number (OGRNIP): 326180000093242.",
           "Phone: +7 967 443-77-67. Email: hikeru1@icloud.com.",
           "Website: https://restatic.team. Payment details are provided in the confirmed order or invoice."
+        ]
+      },
+      {
+        "title": "12 Working through the account",
+        "paragraphs": [
+          "12.1. An application contains a description, brief, work type, music where needed, materials and an optional preferred performer. A moderator agrees the terms. Without a preference, the system suggests a random available member with a matching specialization; OTHER is assigned by a moderator. The performer confirms the assignment before payment is offered. The Client agrees any replacement of a preferred performer.",
+          "12.2. A performer invitation is valid for 24 hours and a client quote for 7 days. After expiry, terms and performer availability must be confirmed again. The Client communicates with moderators before payment; the performer joins the shared chat after confirmed payment. Previews, finals, revisions and agreed changes are recorded in the account. The accepted terms version and quote are retained for the order.",
+          "12.3. The Client accepts the final in the account or submits specific comments. If the Client does not respond, reminders are sent and the administrator reviews the situation individually, recording the reason for the order-status decision. Silence does not become automatic acceptance or remove mandatory client remedies. Completion does not authorize portfolio publication.",
+          "12.4. Performers access only their assigned orders. A moderator proposes changes to the agreed brief or deadline and the Client confirms them. Cancellation and refund requests are reviewed individually; an account refund record reflects a refund actually performed through the payment service. Robokassa test mode verifies system behavior and does not establish receipt of real money."
         ]
       }
     ]

@@ -1,20 +1,94 @@
 services:
   frontend:
+    stop_grace_period: 30s
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    expose:
-      - "3001"
-    networks:
-      - dokploy-network
+    expose: ["3001"]
+    environment: &app-env
+      APP_URL: ${APP_URL:?Set APP_URL to https://restatic.team}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-restatic}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB:-restatic}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?Set BETTER_AUTH_SECRET}
+      DATA_SECRET: ${DATA_SECRET:?Set DATA_SECRET}
+      DATA_DIR: /data/files
+      OWNER_EMAIL: ${OWNER_EMAIL:-hikeru1@icloud.com}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      ROBOKASSA_LOGIN: ${ROBOKASSA_LOGIN:-}
+      ROBOKASSA_TEST: ${ROBOKASSA_TEST:-true}
+      ROBOKASSA_HASH: ${ROBOKASSA_HASH:-sha256}
+      ROBOKASSA_TEST_PASSWORD1: ${ROBOKASSA_TEST_PASSWORD1:-}
+      ROBOKASSA_TEST_PASSWORD2: ${ROBOKASSA_TEST_PASSWORD2:-}
+      ROBOKASSA_PASSWORD1: ${ROBOKASSA_PASSWORD1:-}
+      ROBOKASSA_PASSWORD2: ${ROBOKASSA_PASSWORD2:-}
+      ROBOKASSA_VAT: ${ROBOKASSA_VAT:-}
+      PAYMENTS_LIVE_READY: ${PAYMENTS_LIVE_READY:-false}
+    command:
+      [
+        "sh",
+        "-c",
+        "npm run db:migrate && npm run db:seed && node scripts/start.mjs",
+      ]
+    volumes: ["order-files:/data/files"]
+    networks: ["dokploy-network", "backend"]
+    depends_on:
+      database: { condition: service_healthy }
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:3001/"]
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3001/api/health/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
       interval: 30s
       timeout: 5s
-      start_period: 10s
+      start_period: 60s
       retries: 3
-
+  worker:
+    stop_grace_period: 60s
+    build: { context: ., dockerfile: Dockerfile }
+    restart: unless-stopped
+    environment: *app-env
+    command: ["npm", "run", "worker"]
+    volumes: ["order-files:/data/files"]
+    networks: ["backend"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "const fs=require('fs');try{if(Date.now()-Number(fs.readFileSync('/data/files/worker-health','utf8'))>600000)process.exit(1)}catch{process.exit(1)}",
+        ]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    depends_on:
+      frontend: { condition: service_healthy }
+  database:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-restatic}
+      POSTGRES_USER: ${POSTGRES_USER:-restatic}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: ["database-data:/var/lib/postgresql/data"]
+    networks: ["backend"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
 networks:
-  dokploy-network:
-    external: true
+  dokploy-network: { external: true }
+  backend: {}
+volumes:
+  database-data: {}
+  order-files: {}

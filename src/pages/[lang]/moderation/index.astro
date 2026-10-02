@@ -1,0 +1,7 @@
+---
+import Portal from "@/components/cabinet/Portal.astro";
+if (!["ru", "en"].includes(Astro.params.lang || ""))
+  return Astro.redirect("/en/moderation/");
+---
+
+<Portal mode="moderation" />

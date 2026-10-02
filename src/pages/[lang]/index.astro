@@ -2,16 +2,8 @@
 import '@/styles/global.css';
 import Footer from '@/components/Footer.astro';
 import Hero from '@/components/Hero.astro';
-import { ui, defaultLang } from '@/i18n/ui';
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'ko' } },
-    { params: { lang: 'ru' } },
-    { params: { lang: 'ja' } },
-  ];
-}
+if (!['ru','en','ko','ja'].includes(Astro.params.lang || '')) return new Response('Not found', { status: 404 });
 
 const { lang } = Astro.params;
 ---
